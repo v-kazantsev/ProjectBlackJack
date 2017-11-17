@@ -11,8 +11,8 @@ interface.ask_name
   dealer.make_bet
   2.times { dealer.deal_to_player(player) }
   2.times { dealer.deal_to_dealer }
-  dealer.calc_player_points(player)
-  dealer.calc_dealer_points
+  player.points = dealer.calc_points(player)
+  dealer.points = dealer.calc_points(dealer)
   loop do
   interface.show_table(player, dealer)
   if interface.choice == '3'

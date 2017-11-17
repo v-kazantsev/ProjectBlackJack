@@ -6,27 +6,26 @@ class Dealer < Gambler
   def initialize
     super
     @bank = 0
-    @player_points = 0
-    @dealer_points = 0
   end
   def deal_to_player(player)
     card = Card.new
     player.hand << card
     player.cards_qtty +=1
   end
-  def calc_player_points(player)
-    for i in 0..player.hand.size-1 do
-      @player_points += player.hand[i].value
+  def calc_points(obj)
+    points = 0
+    obj.hand.each do |card| 
+      if card.value > 0
+        points += card.value
+      else
+        points = (points + card.value > 21) ? points + 1 : points + 11
+      end
     end
+    points
   end
   def deal_to_dealer
     card = Card.new
     @hand << card
-  end
-  def calc_dealer_points
-    for i in 0..@hand.size-1 do
-      @dealer_points += @hand[i].value
-    end
   end
 
 end
