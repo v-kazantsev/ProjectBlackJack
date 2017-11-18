@@ -18,7 +18,7 @@ class Dealer < Gambler
       if card.value > 0
         points += card.value
       else
-        points = (points + card.value > 21) ? points + 1 : points + 11
+        points = (points + 11 > 21) ? points + 1 : points + 11
       end
     end
     points

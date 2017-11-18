@@ -14,7 +14,14 @@ class Interface
     puts format(
       "%25s | %s", "#{player_name}: #{player.hand[0].face}#{player.hand[0].suit}\
   #{player.hand[1].face}#{player.hand[1].suit} ", "ДИЛЕР: *** ***")
-puts format("%25s | %s", "У ВАС #{player.points} ОЧКОВ", "У ДИЛЕРА ")
+    puts format("%25s | %s", "У ВАС #{player.points} ОЧКОВ", "У ДИЛЕРА ")
+  end
+  def show_3_2(player,dealer)
+    puts format(
+      "%25s | %s", "#{player_name}: #{player.hand[0].face}#{player.hand[0].suit}\
+  #{player.hand[1].face}#{player.hand[1].suit}\
+  #{player.hand[2].face}#{player.hand[2].suit}", "ДИЛЕР: *** ***")
+    puts format("%25s | %s", "У ВАС #{player.points} ОЧКОВ", "У ДИЛЕРА ")
   end
   def show_table(player,dealer)
     puts format("%25s | %s", "#{player_name}: #{player.money} ГВИНЕЙСКИХ РУПИЙ", "ДИЛЕР: #{dealer.money} ГВИНЕЙСКИХ РУПИЙ")
@@ -26,7 +33,7 @@ puts format("%25s | %s", "У ВАС #{player.points} ОЧКОВ", "У ДИЛЕР
     puts format(
       "%25s | %s", "#{player_name}: #{player.hand[0].face}#{player.hand[0].suit}\
   #{player.hand[1].face}#{player.hand[1].suit} ", "ДИЛЕР: \
-#{dealer.hand[0].face}#{dealer.hand[0].suit}\
+  #{dealer.hand[0].face}#{dealer.hand[0].suit}\
   #{dealer.hand[1].face}#{dealer.hand[1].suit}")
     puts format("%25s | %s", "У ВАС #{player.points} ОЧКОВ", "У ДИЛЕРА #{dealer.points} ")
   end
