@@ -46,10 +46,10 @@ class Interface
     puts format("%25s | %s", "ВАШИ ОЧКИ: #{player.points}", "ОЧКИ ДИЛЕРА: #{dealer.points} ")
   end
 
-  def show_choice
+  def show_choice(player)
     puts 'ВАШ ВЫБОР:'
     puts '[1] ПРОПУСТИТЬ ХОД'
-    puts '[2] ЕЩЕ КАРТУ'
+    puts '[2] ЕЩЕ КАРТУ' unless player.qtty > 2
     puts '[3] ОТКРЫТЬ КАРТЫ'
   end
 

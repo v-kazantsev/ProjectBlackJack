@@ -15,24 +15,28 @@ loop do
   dealer.make_bet
   dealer.bank += 10
   2.times { dealer.deal_to_player(player) }
+  player.qtty = 2
   2.times { dealer.deal_to_dealer }
+  dealer.qtty = 2
   player.points = dealer.calc_points(player)
   dealer.points = dealer.calc_points(dealer)
   interface.show_table(player, dealer)
   interface.show_hands(player,dealer)
-  interface.show_choice
+  interface.show_choice(player)
   loop do
     choice = gets.chomp
       if choice == '2'
         dealer.deal_to_player(player)
+        player.qtty += 1
         player.points = dealer.calc_points(player)
         interface.show_table(player, dealer)
         interface.show_3_2(player,dealer)
       elsif 
         choice == '1'
         player.passed += 1
-        if dealer.points <=18
+        if dealer.points < 18
           dealer.deal_to_dealer
+          dealer.qtty += 1
           interface.dealer_take_card
         else
           interface.dealer_pass
@@ -41,9 +45,9 @@ loop do
         interface.show_table(player, dealer)
         interface.show_hands(player,dealer)
       end
-    interface.show_choice
+    interface.show_choice(player)
     break if player.points >= 21 || dealer.points >= 21 || player.passed == 3 ||
-             choice == '3'
+             choice == '3' || dealer.qtty == 3
   end
   dealer.who_winner(player,dealer)
   interface.show_table(player,dealer)
