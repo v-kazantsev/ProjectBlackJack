@@ -35,7 +35,7 @@ loop do
         choice == '1'
         player.passed += 1
         if dealer.points < 18
-          dealer.deal_to_dealer
+          dealer.deal_to_dealer unless dealer.qtty > 2
           dealer.qtty += 1
           interface.dealer_take_card
         else
