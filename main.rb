@@ -30,7 +30,7 @@ loop do
         player.qtty += 1
         player.points = dealer.calc_points(player)
         interface.show_table(player, dealer)
-        interface.show_3_2(player,dealer)
+        interface.show_hands(player,dealer)
       elsif 
         choice == '1'
         player.passed += 1

@@ -19,14 +19,6 @@ class Interface
     puts format("%25s | %s", "ВАШИ ОЧКИ: #{player.points}", "ОЧКИ ДИЛЕРА: ")
   end
 
-  def show_3_2(player,dealer)
-    @str = ''
-    player.hand.each { |card| @str += card.face + ' ' + card.suit + ' '}
-    puts format(
-      "%25s | %s", "#{player_name}: #{@str}", "ДИЛЕР: *** ***")
-    puts format("%25s | %s", "ВАШИ ОЧКИ: #{player.points}", "ОЧКИ ДИЛЕРА: ")
-  end
-
   def show_table(player,dealer)
     puts '-'*56
     puts "#{player_name},"
