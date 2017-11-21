@@ -1,6 +1,6 @@
-require_relative 'class_interface'
-require_relative 'class_dealer'
-require_relative 'class_player'
+require_relative 'interface'
+require_relative 'dealer'
+require_relative 'player'
 interface = Interface.new
 player = Player.new
 dealer = Dealer.new
@@ -10,6 +10,7 @@ loop do
     interface.game_over
     break
   end
+  dealer.make_deck
   player.make_bet
   dealer.bank += 10
   dealer.make_bet

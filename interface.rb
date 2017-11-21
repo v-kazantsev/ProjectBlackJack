@@ -1,4 +1,4 @@
-require_relative 'class_player'
+require_relative 'player'
 class Interface
   attr_accessor :player_name
   

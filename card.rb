@@ -1,12 +1,15 @@
 class Card
+  
   attr_accessor :face, :value, :suit
-  FACE  = %w(2 3 4 5 6 7 8 9 10 J Q K A)
-  VALUE = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 0]
+
+  FACE  = %w(2 3 4 5 6 7 8 9 10 J Q K A).freeze
+  VALUE = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 0].freeze
   HEARTS = "\u2661".encode('utf-8')
   DIAMONDS = "\u2662".encode('utf-8')
   CLUBS = "\u2667".encode('utf-8')
   SPADES = "\u2664".encode('utf-8')
-  SUIT = [HEARTS, DIAMONDS, CLUBS, SPADES]
+  SUIT = [HEARTS, DIAMONDS, CLUBS, SPADES].freeze
+
   def initialize
     ind = rand(13)
     @face = FACE[ind]
