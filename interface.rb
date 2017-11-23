@@ -41,7 +41,7 @@ class Interface
   def show_choice(player)
     puts 'ВАШ ВЫБОР:'
     puts '[1] ПРОПУСТИТЬ ХОД'
-    puts '[2] ЕЩЕ КАРТУ' unless player.qtty > 2
+    puts '[2] ЕЩЕ КАРТУ' unless player.hand.size > 2
     puts '[3] ОТКРЫТЬ КАРТЫ'
   end
 
@@ -53,8 +53,8 @@ class Interface
     puts 'ДИЛЕР БЕРЕТ КАРТУ'
   end
 
-  def show_winner(dealer)
-    if dealer.winner == 'player'
+  def show_winner(game)
+    if game.winner == 'player'
       puts 'ВЫ ВЫИГРАЛИ'
     else
       puts 'ВЫ ПРОИГРАЛИ'
